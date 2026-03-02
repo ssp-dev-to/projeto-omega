@@ -2,11 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/hello', function () {
-    return 'Hello World from Laravel!';
-})->middleware('auth');
+Route::get('/', \App\Livewire\HelloWorld::class)->name('home');
 
-Route::view('/', 'welcome')->name('home');
+Route::get('/hello-world', \App\Livewire\HelloWorld::class)->name('hello-world');
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::view('dashboard', 'dashboard')->name('dashboard');
