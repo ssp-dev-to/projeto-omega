@@ -6,6 +6,10 @@ Route::get('/hello', function () {
     return 'Hello World from Laravel!';
 })->middleware('auth');
 
+Route::get('/contact', function () {
+    return 'Hello World from Contact!';
+})->middleware('auth');
+
 Route::view('/', 'welcome')->name('home');
 
 Route::middleware(['auth', 'verified'])->group(function () {
