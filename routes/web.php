@@ -3,7 +3,11 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/hello', function () {
-    return 'Hello World from Laravel!';
+    return 'Hello World no Laravel!';
+})->middleware('auth');
+
+Route::get('/SSP', function () {
+    return 'Integração Luahr!';
 })->middleware('auth');
 
 Route::view('/', 'welcome')->name('home');
